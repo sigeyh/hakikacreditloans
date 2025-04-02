@@ -3,44 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTP Verification</title>
-  
+  <meta name="description" content="A fast and lightweight Progressive Web App (PWA) for your platform.">
+  <meta name="keywords" content="PWA, Landing Page, Web App, Mobile App">
+  <meta name="author" content="Your Name">
+
+  <!-- Open Graph Meta Tags for Social Media Preview -->
+  <meta property="og:title" content="Welcome to Our Platform">
+  <meta property="og:description" content="A seamless and mobile-friendly PWA experience.">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="https://your-vercel-app.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Welcome to Our Platform</title>
+
   <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#3f4bef">
-  
+  <link rel="manifest" href="/manifest.json">
+
   <!-- iOS PWA Support -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="OTP App">
-  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
-  
+  <meta name="apple-mobile-web-app-title" content="Landing Page">
+  <link rel="apple-touch-icon" href="download-removebg-preview (10).png">
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="icons/icon-72x72.png">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.ico">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="get.css">
 </head>
 <body>
+
   <div class="container">
-    <h2>Enter Mobile Number</h2>
-    <input type="tel" id="mobile" placeholder="Enter mobile number" required>
-    <button onclick="sendOTP()">Send OTP</button>
-    
-    <div id="otpSection" style="display:none;">
-      <h2>Enter OTP</h2>
-      <input type="text" id="otp" placeholder="Enter OTP" required>
-      <button onclick="verifyOTP()">Verify OTP</button>
+    <!-- Logo Section -->
+    <img src="download-removebg-preview (10).png" alt="Logo" class="logo">
+
+    <!-- Welcome Title -->
+    <h1>Welcome to Inuka Credit</h1>
+
+    <!-- Steps Section -->
+    <div class="steps">
+      <p>Follow these steps to get started:</p>
+      <ol>
+        <li>Create an account</li>
+        <li>Verify your phone number</li>
+        <li>Access your dashboard</li>
+      </ol>
     </div>
+
+    <!-- Register Button -->
+    <a href="register.html" class="button">Get Started</a>
   </div>
-  
-  <script src="script.js"></script>
+
+  <!-- Service Worker for PWA -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log("Service Worker Registered", reg))
-        .catch(err => console.log("Service Worker Registration Failed", err));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker Registered!', reg))
+          .catch(err => console.log('Service Worker Registration Failed:', err));
+      });
     }
   </script>
+
 </body>
 </html>
+<script async data-explicit-opt-in="true" data-cookie-opt-in="true" data-deployment-id="dpl_5b1LwqfK8TAhDdAiQHJciFseYbKg" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
